@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 var teamSchema = new mongoose.Schema({
-    
-})
+
+});
 
 var trainerSchema = new mongoose.Schema({
     name: String,
