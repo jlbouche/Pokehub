@@ -18,7 +18,10 @@ require('./config/database');
 // configure Passport
 require('./config/passport');
 
-
+var indexRoute = require('./routes/index');
+var trainerRoute = require('./routes/trainers');
+var pokemonRoute = require('./routes/pokemons');
+var regionRoute = require('./routes/regions');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -40,10 +43,17 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Custom middleware that passes req.user to all templates
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 
 // mount all routes with appropriate base paths
-app.use('/', indexRoutes);
-
+app.use('/', indexRoute);
+app.use('/trainers', trainerRoute);
+app.use('/regions', regionRoute);
+app.use('/pokemons', pokemonRoute);
 
 // invalid request, send 404 page
 app.use(function(req, res) {
