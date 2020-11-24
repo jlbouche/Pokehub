@@ -5,7 +5,7 @@ var teamSchema = new mongoose.Schema({
 
 });
 
-var trainerSchema = new mongoose.Schema({
+var researcherSchema = new mongoose.Schema({
     name: String,
     email: String,
     avatar: String,
@@ -13,4 +13,4 @@ var trainerSchema = new mongoose.Schema({
     team: [teamSchema]
 });
 
-module.exports = mongoose.model('Trainer', trainerSchema);
+module.exports = mongoose.model('Researcher', researcherSchema);
