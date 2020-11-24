@@ -21,7 +21,6 @@ require('./config/passport');
 var indexRoute = require('./routes/index');
 var trainerRoute = require('./routes/trainers');
 var pokemonRoute = require('./routes/pokemons');
-var regionRoute = require('./routes/regions');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -52,7 +51,6 @@ app.use(function(req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRoute);
 app.use('/trainers', trainerRoute);
-app.use('/regions', regionRoute);
 app.use('/pokemons', pokemonRoute);
 
 // invalid request, send 404 page
