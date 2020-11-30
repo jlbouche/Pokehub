@@ -3,7 +3,8 @@ const Pokemon = require('../models/pokemon');
 module.exports = {
     index,
     show,
-    create
+    create,
+    addComment
 }
 
 function index(req, res) {
@@ -24,4 +25,13 @@ function create(req, res) {
     if (err) return res.redirect('/pokemons/new');
     res.redirect(`/pokemons/${pokemon._id}`);
   });
+}
+
+function addComment(req, res) {
+  Pokemon.findById(req.params.id, function(err, pokemon) {
+    pokemon.comments.push(req.body);
+    pokemon.save(function(err) {
+      res.redirect(`/pokemons/${pokemon._id}`);
+    })
+  })
 }

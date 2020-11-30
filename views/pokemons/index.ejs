@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Pokemon</th>
+                <th>Pokemon ID</th>
+                <th>Pokemon Type 1</th>
+                <th>Pokemon Type 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% pokemons.forEach(function(p) { %>
+                <tr>
+                    <td><%= p.pokemame %></td>
+                    <td><%= p.pokeid %></td>
+                    <td><%= p.poketype1 %></td>
+                    <td><%= p.poketype2 %></td>
+                    <td><a href="/pokemons/<%=p._id %>">Details/Researcher Notes</a></td>
+                </tr>
+        </tbody>
+    </table>
+</body>
+</html>

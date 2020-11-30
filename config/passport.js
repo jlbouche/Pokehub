@@ -1,7 +1,7 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 //Require your User Model here!
-const Trainer = require('../models/trainer');
+const Researcher = require('../models/researcher');
 
 // configuring Passport!
 passport.use(new GoogleStrategy({
@@ -11,33 +11,33 @@ passport.use(new GoogleStrategy({
 }, function (accessToken, refreshToken, profile, cb) {  // Verify CB
   // A user has logged in via Google OAuth
   console.log(profile);
-  Trainer.findOne({ googleId: profile.id }, function (err, trainer) {
+  Researcher.findOne({ googleId: profile.id }, function (err, researcher) {
     if (err) return cb(err);
-    if (trainer) {
-      return cb(null, trainer);
+    if (researcher) {
+      return cb(null, researcher);
     } else {
-      // We have a new trainer!
-      const newTrainer = new Trainer({
+      // We have a new researcher!
+      const newResearcher = new Researcher({
         name: profile.displayName,
         email: profile.emails[0].value,
         googleId: profile.id,
         avatar: profile.photos[0].value
       });
-      newTrainer.save(function (err) {
+      newResearcher.save(function (err) {
         if (err) return cb(err);
-        return cb(null, newTrainer);
+        return cb(null, newResearcher);
       });
     }
   });
 }));
 
-passport.serializeUser(function(trainer, done) {
-  done(null, trainer.id);
+passport.serializeUser(function(researcher, done) {
+  done(null, researcher.id);
 });
 
 passport.deserializeUser(function(id, done) {
-  Trainer.findById(id, function(err, trainer) {
-    done(err, trainer);
+  Researcher.findById(id, function(err, researcher) {
+    done(err, researcher);
   })
 });
 

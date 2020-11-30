@@ -3,7 +3,6 @@ const Researcher = require('../models/researcher');
 module.exports = {
     index,
     new: newPokemon,
-    addTeam
 }
 
 function index(req, res) {
