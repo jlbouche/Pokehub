@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>Hello!</h1>
+    <form id="add-note-form" method="POST" action="/pokemons/<%= pokemon._id %>/notes">
+        <label>Researcher Notes:</label>
+        <textarea name="notecontent"></textarea>
+        <input type="submit" value="Add Note">
+      </form>
 </body>
 </html>

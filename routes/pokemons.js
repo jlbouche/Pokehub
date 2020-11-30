@@ -1,8 +1,11 @@
 var router = require('express').Router();
-const passport = require('passport');
+const request = require('request');
+const pokemonsCtrl = require('../controllers/pokemons');
 
-router.get('/', function(req, res) {
-    res.render('/pokemons');
-  });
+router.get('/', pokemonsCtrl.index);
+router.get('/new', pokemonsCtrl.new);
+router.post('/', pokemonsCtrl.create);
+router.get('/:id', pokemonsCtrl.show);
+
 
 module.exports = router;
