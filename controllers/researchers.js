@@ -1,16 +1,12 @@
 const Researcher = require('../models/researcher');
+const Pokemon = require('../models/pokemon');
 
 module.exports = {
     index,
-    new: newPokemon,
 }
 
 function index(req, res) {
     Researcher.find({}, function(err, researchers) {
       res.render('researchers/index', { title: 'Your Researcher Profile', researchers });
     });
-}
-
-function newPokemon(req, res) {
-    res.render('pokemons/new', { title: 'Add Pokemon to Pokedex'});
 }

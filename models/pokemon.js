@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const noteSchema = new mongoose.Schema({
-    text: String
+const notesSchema = new Schema({
+  content: String,
 }, {
-    timestamps: true
+  timestamps: true
 });
 
 const pokemonSchema = new Schema({
@@ -17,7 +17,7 @@ const pokemonSchema = new Schema({
     poketype1: String,
     poketype2: String,
     pokedescript: String,
-    notes: [noteSchema]
+    notes: [notesSchema]
 });
 
 module.exports = mongoose.model('Pokemon', pokemonSchema);

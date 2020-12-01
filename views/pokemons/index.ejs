@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Document</title>
+    <title>Main Hub</title>
 </head>
 <body>
     <table>
@@ -19,12 +19,13 @@
         <tbody>
             <% pokemons.forEach(function(p) { %>
                 <tr>
-                    <td><%= p.pokemame %></td>
+                    <td><%= p.pokename %></td>
                     <td><%= p.pokeid %></td>
                     <td><%= p.poketype1 %></td>
                     <td><%= p.poketype2 %></td>
                     <td><a href="/pokemons/<%=p._id %>">Details/Researcher Notes</a></td>
                 </tr>
+            <% }); %>
         </tbody>
     </table>
 </body>

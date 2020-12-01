@@ -6,8 +6,11 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
-var Pokedex = require('pokedex-promise-v2');
-var P = new Pokedex();
+
+var indexRoute = require('./routes/index');
+var researcherRoute = require('./routes/researchers');
+var pokemonRoute = require('./routes/pokemons');
+var notesRoute = require('./routes/notes');
 
 // load the env vars
 require('dotenv').config();
@@ -19,10 +22,6 @@ var app = express();
 require('./config/database');
 // configure Passport
 require('./config/passport');
-
-var indexRoute = require('./routes/index');
-var researcherRoute = require('./routes/researchers');
-var pokemonRoute = require('./routes/pokemons');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -54,6 +53,7 @@ app.use(function(req, res, next) {
 app.use('/', indexRoute);
 app.use('/researchers', researcherRoute);
 app.use('/pokemons', pokemonRoute);
+app.use('/', notesRoute)
 
 // invalid request, send 404 page
 app.use(function(req, res) {
