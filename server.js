@@ -7,8 +7,8 @@ var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
 
+// define routes
 var indexRoute = require('./routes/index');
-var researcherRoute = require('./routes/researchers');
 var pokemonRoute = require('./routes/pokemons');
 var notesRoute = require('./routes/notes');
 
@@ -35,7 +35,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 // mount the session middleware
 app.use(session({
-  secret: 'SEI Rocks!',
+  secret: 'Pokehub!',
   resave: false,
   saveUninitialized: true
 }));
@@ -51,7 +51,6 @@ app.use(function(req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRoute);
-app.use('/researchers', researcherRoute);
 app.use('/pokemons', pokemonRoute);
 app.use('/', notesRoute)
 

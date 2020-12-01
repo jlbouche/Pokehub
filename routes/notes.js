@@ -1,6 +1,6 @@
-const express = require('express');
-const router = express.Router();
-const notesCtrl = require('../controllers/notes');
+var express = require('express');
+var router = express.Router();
+var notesCtrl = require('../controllers/notes');
 
 router.post('/pokemons/:id/notes', notesCtrl.create);
 

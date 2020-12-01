@@ -1,10 +1,10 @@
-const express = require('express');
-const router = express.Router();
-const pokemonsCtrl = require('../controllers/pokemons');
+var express = require('express');
+var router = express.Router();
+var pokeCtrl = require('../controllers/pokemons');
 
-router.get('/', pokemonsCtrl.index);
-router.get('/new', pokemonsCtrl.new);
-router.post('/', pokemonsCtrl.create);
-router.get('/_id', pokemonsCtrl.show);
+router.get('/', pokeCtrl.index);
+router.get('/new', pokeCtrl.new);
+router.get('/:id', pokeCtrl.show);
+router.post('/', pokeCtrl.create);
 
 module.exports = router;
