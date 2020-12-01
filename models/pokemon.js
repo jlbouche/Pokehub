@@ -15,6 +15,7 @@ const pokemonSchema = new Schema({
     type: String
   },
   pokename: String,
+  pokenickname: String,
   pokeid: {
       type: Number,
       min: 001,

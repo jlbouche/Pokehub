@@ -2,6 +2,7 @@
 
 <div class = "pokeprofile">
     <h1><%=pokemon.pokename %></h1>
+    <h2><%=pokemon.pokenickname %></h2>
     <section id="show-page">
       <table>
         <thead>
@@ -20,7 +21,6 @@
       </section>
       <h2>Researcher notes</h2>
       <form id="add-note-form" method="POST" action="/pokemons/<%= pokemon._id %>/notes">
-        <label>Notes:</label>
         <textarea name="content"></textarea>
         <input type="submit" value="Add Note">
       </form>
@@ -40,6 +40,13 @@
                 <td><%= n.createdAt.toLocaleDateString() %></td>
                 <td><%= user.name %></td>
                 <td><%= n.content %></td>
+                  <td><form action="notes/<%= n._id%>?_method=PUT" method="POST">
+                    <textarea name="content" placeholder="Edit your note"></textarea>
+                  <input type="submit" value="Update comment">
+                </form></td>
+                <td><form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
+                  <button type="submit">Delete?</button>
+                </form></td>
               </tr>
             <% }); %>
           </tbody>

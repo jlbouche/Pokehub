@@ -3,6 +3,7 @@
 <table id="list">
   <thead>
     <tr>
+      <th>Pokedex Entry</th>
       <th>Name:</th>
       <th>ID:</th>
       <th>Type 1:</th>
@@ -12,11 +13,11 @@
   <tbody>
     <% pokemons.forEach(function(p) { %>
       <tr>
+        <td><a href="/pokemons/<%= p._id %>"><img src="https://i.imgur.com/uYbHacI.png"></a></td>
         <td><%= p.pokename %></td>
         <td><%= p.pokeid %></td>
         <td><%= p.poketype1 %></td>
         <td><%= p.poketype2 %></td>
-        <td><a href="/pokemons/<%= p._id %>">Details</a></td>
       </tr>
       <% }); %>
     </tbody>

@@ -5,7 +5,8 @@ module.exports = {
   show,
   new: newPokemon,
   create,
-  edit
+  edit,
+  delete: deleteOne
 };
 
 function index(req, res) {
@@ -41,4 +42,11 @@ function edit(req, res) {
     req.body,
     {new: true},
   )
+}
+
+function deleteOne(req, res, next){
+  Pokemon.findById(req.params.id, function(err, pokemon){
+    pokemon.remove();
+    res.redirect('/pokemons/');
+  });
 }

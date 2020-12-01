@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 const researchersCtrl = require('../controllers/researchers');
 
-router.get('/profile', isLoggedIn, researchersCtrl.show);
+router.get('/profile', loggedIn, researchersCtrl.show);
 
-function isLoggedIn(req, res, next){
+function loggedIn(req, res, next){
   if(req.isAuthenticated()){
       return next()
   } else {
