@@ -2,7 +2,7 @@
 
 ## Gotta index 'em all!
 
-#### Professor Oak is recruiting for more professors throughout the Pokemon universe! Before you can prove yourself as a Pokemon Researcher though, he's requiring some hands-on training by sending you out into the world of Pokemon. Add new Pokemon, comment on special interactions you've had with them, and continue your journey in becoming a Pokemon master!
+#### Professor Oak is recruiting for more professors throughout the Pokemon universe! Before you can establish yourself as a full-fledged Pokemon Researcher, he's requiring some hands-on training by sending you out into the world of Pokemon. Add new Pokemon, comment on special interactions you've had with them, and continue your journey in becoming a Pokemon master!
 
 ## Screenshots of app
 
@@ -39,3 +39,7 @@
 ## Icebox
 
 ### Due to time constraints there were a lot of implementations I put in the icebox--I tried playing with multer to allow users to upload an image when creating a pokemon, but it was consuming too much time. Allowing researchers to add a Pokemon Team to their profile, and noting what Pokemon they have added or made research notes on.
+
+## Credits
+
+### gifs and artwork were found through Google image search, edited with pixlr.com.
