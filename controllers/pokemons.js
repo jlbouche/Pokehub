@@ -15,11 +15,13 @@ function index(req, res) {
 
 function show(req, res) {
   Pokemon.findById(req.params.id, function(err, pokemon) {
-    res.render('pokemons/show', {
+        res.render('pokemons/show', {
           title: 'Pokemon Detail', pokemon
         });
-      });
-}
+      }
+    );
+  };
+
 
 function newPokemon(req, res) {
   res.render('pokemons/new', { title: 'Add Pokemon' });
@@ -28,7 +30,6 @@ function newPokemon(req, res) {
 function create(req, res) {
   const pokemon = new Pokemon(req.body);
   pokemon.save(function(err) {
-    if (err) return res.redirect('/pokemons/new');
     res.redirect(`/pokemons/${pokemon._id}`);
   });
 }
