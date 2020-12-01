@@ -15,6 +15,7 @@ const pokemonSchema = new Schema({
     data: Buffer,
     type: String
   },
+  userId: {type: Schema.Types.ObjectId, ref: "User"},
   pokename: String,
   pokenickname: String,
   pokeid: {
