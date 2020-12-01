@@ -15,6 +15,7 @@ var indexRoute = require('./routes/index');
 var pokemonRoute = require('./routes/pokemons');
 var notesRoute = require('./routes/notes');
 var researcherRoute = require('./routes/researchers');
+var teamsRoute = require('./routes/teams');
 const { config } = require('dotenv');
 
 // load the env vars
@@ -57,8 +58,9 @@ app.use(function(req, res, next) {
 // mount all routes with appropriate base paths
 app.use('/', indexRoute);
 app.use('/pokemons', pokemonRoute);
-app.use('/', notesRoute)
-app.use('/researchers', researcherRoute)
+app.use('/', notesRoute);
+app.use('/researchers', researcherRoute);
+app.use('/', teamsRoute);
 
 // invalid request, send 404 page
 app.use(function(req, res) {

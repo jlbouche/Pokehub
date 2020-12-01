@@ -3,13 +3,20 @@
 <div class = "pokeprofile">
     <h1><%=pokemon.pokename %></h1>
     <section id="show-page">
-        <div>PokeID:</div>
-        <div><%= pokemon.pokeid %></div>
-        <div>PokeTypes: </div>
-        <div><%= pokemon.poketype1 %></div>
-        <div><%= pokemon.poketype2 %></div>
-        <div>Description: </div>
-        <div><%= pokemon.pokedescript %></div>
+      <table>
+        <thead>
+          <tr>
+            <th>PokeID: </th>
+            <th>PokeTypes: </th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <td><%= pokemon.pokeid %></td>
+          <td><%= pokemon.poketype1 %><br><%= pokemon.poketype2 %></td>
+          <td><%= pokemon.pokedescript %></td>
+        </tbody>
+      </table>
       </section>
       <h2>Researcher notes</h2>
       <form id="add-note-form" method="POST" action="/pokemons/<%= pokemon._id %>/notes">

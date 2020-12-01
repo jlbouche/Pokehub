@@ -5,6 +5,7 @@ module.exports = {
   show,
   new: newPokemon,
   create,
+  edit
 };
 
 function index(req, res) {
@@ -32,4 +33,12 @@ function create(req, res) {
   pokemon.save(function(err) {
     res.redirect(`/pokemons/${pokemon._id}`);
   });
+}
+
+function edit(req, res) {
+  Pokemon.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    {new: true},
+  )
 }

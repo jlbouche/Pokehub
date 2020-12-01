@@ -6,6 +6,7 @@ router.get('/', pokeCtrl.index);
 router.get('/new', pokeCtrl.new);
 router.get('/:id', pokeCtrl.show);
 router.post('/', pokeCtrl.create);
+router.put('/:id', pokeCtrl.edit);
 
 
 module.exports = router;

@@ -1,4 +1,5 @@
 const Researcher = require('../models/researcher');
+const Pokemon = require('../models/pokemon');
 
 module.exports = {
   show
