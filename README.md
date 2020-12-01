@@ -38,7 +38,7 @@
 
 ## Icebox
 
-### Due to time constraints there were a lot of implementations I put in the icebox--I tried playing with multer to allow users to upload an image when creating a pokemon, but it was consuming too much time. Allowing researchers to add a Pokemon Team to their profile, and noting what Pokemon they have added or made research notes on.
+### Due to time constraints there were a few things I put in the icebox. I started steps with multer and GridFS to allow users to upload an image when creating a pokemon, created basic models/controller functions allowing researchers to add a Pokemon Team to their profile, and noting on their profile what Pokemon they have added or made research notes on. Would def like to continue those.
 
 ## Credits
 
