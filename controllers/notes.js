@@ -19,8 +19,10 @@ function create(req, res){
 function edit(req, res) {
   Pokemon.findOne({'notes._id': req.params.id}, function(err, pokemons) {
     const noteDoc = pokemons.notes.id(req.params.id);
+    console.log(noteDoc);
     if (!noteDoc.userId.equals(req.user._id)) return res.redirect(`/pokemons/${pokemons._id}`);
-    noteDoc.text = req.body.text;
+    noteDoc.content = req.body.content;
+    console.log("this is the updated note doc ", noteDoc);
     pokemons.save(function(err) {
       res.redirect(`/pokemons/${pokemons._id}`);
     });
@@ -28,9 +30,10 @@ function edit(req, res) {
 }
  
 function deleteNote(req, res) {
-  Pokemon.findOne({'comment._id': req.params.id}, function(err, pokemons) {
+  Pokemon.findOne({'notes._id': req.params.id}, function(err, pokemons) {
     const noteDoc = pokemons.notes.id(req.params.id);
     if (!noteDoc.userId.equals(req.user._id)) return res.redirect(`/pokemons/${pokemons._id}`);
+    console.log(noteDoc);
     noteDoc.remove();
     pokemons.save(function(err) {
       res.redirect(`/pokemons/${pokemons._id}`);

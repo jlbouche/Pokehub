@@ -4,6 +4,7 @@
     color: black;
     text-align: center;
   }
+
   
   body {
     text-align: center;
@@ -12,6 +13,7 @@
     background-image: url('/public/images/Pokedexopen.png');
     background-repeat: no-repeat;
     display: grid;
+    background-color: black;
     grid-template-rows: 50px 1fr;
     grid-template-areas: 
       "nav"
@@ -68,4 +70,13 @@
   table tr {
     padding: 10px;
     text-align: center;
+  }
+
+  #index {
+    background: url('https://i.imgur.com/u8aIbPC.png');
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    width: 800px;
+    height: 600px;
   }

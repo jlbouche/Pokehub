@@ -31,6 +31,7 @@ function newPokemon(req, res) {
 
 function create(req, res) {
   const pokemon = new Pokemon(req.body);
+  req.body.userId = req.user._id;
   pokemon.save(function(err) {
     res.redirect(`/pokemons/${pokemon._id}`);
   });
