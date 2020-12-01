@@ -4,7 +4,7 @@ const pokemonsCtrl = require('../controllers/pokemons');
 
 router.get('/', pokemonsCtrl.index);
 router.get('/new', pokemonsCtrl.new);
-router.get('/:id', pokemonsCtrl.show);
 router.post('/', pokemonsCtrl.create);
+router.get('/_id', pokemonsCtrl.show);
 
 module.exports = router;
