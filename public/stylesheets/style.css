@@ -2,10 +2,11 @@
     box-sizing: border-box;
     font-family: monospace;
     color: black;
+    text-align: center;
   }
   
   body {
-      text-align: center;
+    text-align: center;
     margin: 0;
     height: 100vh;
     background-image: url('/public/images/Pokedexopen.png');

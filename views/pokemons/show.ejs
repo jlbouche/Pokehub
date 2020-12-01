@@ -39,14 +39,14 @@
               <tr>
                 <td><%= n.createdAt.toLocaleDateString() %></td>
                 <td><%= user.name %></td>
-                <td><%= n.content %></td>
-                  <td><form action="notes/<%= n._id%>?_method=PUT" method="POST">
-                    <textarea name="content" placeholder="Edit your note"></textarea>
-                  <input type="submit" value="Update comment">
-                </form></td>
-                <td><form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
-                  <button type="submit">Delete?</button>
-                </form></td>
+                <td><%= n.content %></td><br><br><br>
+                <td><form action="notes/<%= n._id%>?_method=PUT" method="POST">
+                  <textarea name="content" placeholder="Edit your note"></textarea><br>
+                <input type="submit" value="Update comment">
+              </form>
+              <form action="/notes/<%= n._id %>?_method=DELETE" method="POST">
+                <button type="submit">Delete comment</button>
+              </form></td>
               </tr>
             <% }); %>
           </tbody>
@@ -54,5 +54,6 @@
       <% } else { %>
         <h5>No researcher notes yet</h5>
       <% } %>
+      <img src = "http://37.media.tumblr.com/37cd947b2e5e703f6174c5a86f1ede41/tumblr_n77yu5PzwL1ts7zvxo1_500.gif" style="width:300px;height:245px">
 </div>
 <%- include('../partials/footer') %>

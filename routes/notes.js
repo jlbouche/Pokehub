@@ -3,8 +3,8 @@ var router = express.Router();
 var notesCtrl = require('../controllers/notes');
 
 router.post('/pokemons/:id/notes', loggedIn, notesCtrl.create);
-router.put('/pokemons/:id/notes', loggedIn, notesCtrl.edit);
-router.delete('/pokemons/:id/notes', loggedIn, notesCtrl.delete);
+router.put('/pokemons/:id/notes/:id', loggedIn, notesCtrl.edit);
+router.delete('/pokemons/:id/notes/:id', loggedIn, notesCtrl.delete);
 
 function loggedIn(req, res, next){
     if(req.isAuthenticated()){
