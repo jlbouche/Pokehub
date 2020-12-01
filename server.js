@@ -5,12 +5,17 @@ var cookieParser = require('cookie-parser');
 // session middleware
 var session = require('express-session');
 var passport = require('passport');
+const multer = require('multer')
+const GridFsStorage = require('multer-gridfs-storage')
+const Grid = require('gridfs-stream')
 var methodOverride = require('method-override');
 
 // define routes
 var indexRoute = require('./routes/index');
 var pokemonRoute = require('./routes/pokemons');
 var notesRoute = require('./routes/notes');
+var researcherRoute = require('./routes/researchers');
+const { config } = require('dotenv');
 
 // load the env vars
 require('dotenv').config();
@@ -53,10 +58,11 @@ app.use(function(req, res, next) {
 app.use('/', indexRoute);
 app.use('/pokemons', pokemonRoute);
 app.use('/', notesRoute)
+app.use('/researchers', researcherRoute)
 
 // invalid request, send 404 page
 app.use(function(req, res) {
-  res.status(404).send('Cant find that!');
+  res.status(404).send("Can't find that!");
 });
 
 module.exports = app;

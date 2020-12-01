@@ -4,7 +4,7 @@ module.exports = {
   index,
   show,
   new: newPokemon,
-  create
+  create,
 };
 
 function index(req, res) {

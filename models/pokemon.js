@@ -10,6 +10,10 @@ const noteSchema = new Schema({
 
 
 const pokemonSchema = new Schema({
+  image: {
+    data: Buffer,
+    type: String
+  },
   pokename: String,
   pokeid: {
       type: Number,
